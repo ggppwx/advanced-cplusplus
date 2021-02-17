@@ -13,7 +13,7 @@ using namespace std;
 
 class MyException: public exception {
 public:
-	virtual const char* what() const throw() {
+	virtual const char* what() const throw() { // prototype to override what() 
 		return "Something bad happened!";
 	}
 };
@@ -21,6 +21,7 @@ public:
 class Test {
 public:
 	void goesWrong() {
+	// void goesWrong() throw() { // throw() means not throw excpetion 
 		throw MyException();
 	}
 };

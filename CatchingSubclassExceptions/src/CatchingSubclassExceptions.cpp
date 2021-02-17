@@ -27,7 +27,12 @@ int main() {
 
 	try {
 		goesWrong();
-	} catch (bad_alloc &e) {
+	} 
+	// catch (exception &e) {
+		// this will also catch bad_alloc since it's a subclass 
+	// }
+	
+	catch (bad_alloc &e) {  // again catch by reference 
 		cout << "Catching bad_alloc: " << e.what() << endl;
 	} catch (exception &e) {
 		cout << "Catching exception: " << e.what() << endl;
