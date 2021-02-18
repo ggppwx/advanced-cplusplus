@@ -10,19 +10,24 @@
 #include <fstream>
 using namespace std;
 
-#pragma pack(push, 1)
+#pragma pack(push, 1) // align the padding 
 
 struct Person {
-	char name[50];
-	int age;
-	double weight;
-};
+	char name[50]; // 50 bytes 
+	// if we use string, it doesn't store the actaul data 
 
-#pragma pack(pop)
+	int age;  // 4 bytes
+	double weight;  // 8 bytes 
+};
+// now it's 62 instead of 64
+
+
+#pragma pack(pop)  // ondo the packing 
 
 int main() {
 
-	cout << sizeof(Person) << endl;
+
+	cout << sizeof(Person) << endl; // but we have 64 bytes because of padding 
 
 
 

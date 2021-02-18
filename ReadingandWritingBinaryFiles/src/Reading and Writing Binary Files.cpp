@@ -22,7 +22,7 @@ int main() {
 
 	string filename = "data.bin";
 
-	Data data = { "Pixie", 120, 0.8 };
+	Data data = { "Pixie", 120, 0.8 }; // init struct 
 
 	/*
 	 data.name = "Pixie";
@@ -32,13 +32,16 @@ int main() {
 
 	ofstream output;
 
-	output.open(filename);
+	output.open(filename, ios::binary); // make sure it's bianry file, it doesn't have \n
 
 	if (!output.is_open()) {
 		cout << "Could not create " << filename << endl;
 	}
 
-	output.write((char *) &data, sizeof(data));
+	output.write((char *) &data, sizeof(data)); 
+
+	// reinterpret_cast<char *>(&data) is better 
+
 
 	if (!output) {
 		cout << "Could not write data to file " << filename << endl;

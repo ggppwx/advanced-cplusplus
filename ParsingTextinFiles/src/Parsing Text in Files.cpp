@@ -25,15 +25,17 @@ int main() {
 	while(input) {
 		string line;
 
-		getline(input, line, ':');
+		getline(input, line, ':'); // it will remove delimiter 
 
 		int population;
+		// extract 
 		input >> population;
 
-		// input.get();
-		input >> ws;
+		// input.get();  get next char 
+		input >> ws; // handle white space C++ 11
 
 		if(!input) {
+			// remember line 3 could empty, then it's in error condition 
 			break;
 		}
 

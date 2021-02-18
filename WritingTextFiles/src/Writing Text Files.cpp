@@ -16,7 +16,7 @@ int main() {
 
 	// ofstream outFile;
 
-	fstream outFile;
+	fstream outFile; // can do either fstream or ofstream  
 
 	string outputFileName = "text.txt";
 

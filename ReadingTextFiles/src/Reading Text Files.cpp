@@ -16,7 +16,8 @@ int main() {
 
 	string inFileName = "test.txt";
 
-	ifstream inFile;
+	ifstream inFile;  // input file stream 
+	// can do fstream too 
 
 	inFile.open(inFileName);
 
@@ -24,7 +25,9 @@ int main() {
 
 		string line;
 
-		while (inFile) {
+		while (inFile) {  // ! inFile.eof()
+			// but inFile has a very useful operator overload 
+			// the bool operator of inFile has been overloaded 
 			getline(inFile, line);
 			cout << line << endl;
 		}
